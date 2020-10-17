@@ -13,7 +13,7 @@ namespace TomLonghurst.DependencyInjection
         return new ChainConfiguratorImpl<T>(services);
     }
 
-    public interface IChainConfigurator<T>
+    public interface IChainConfigurator<in T>
     {
         IChainConfigurator<T> Add<TImplementation>() where TImplementation : T;
         void Configure();
@@ -22,8 +22,8 @@ namespace TomLonghurst.DependencyInjection
     private class ChainConfiguratorImpl<T> : IChainConfigurator<T> where T : class
     {
         private readonly IServiceCollection _services;
-        private List<Type> _types;
-        private Type _interfaceType;
+        private readonly List<Type> _types;
+        private readonly Type _interfaceType;
 
         public ChainConfiguratorImpl(IServiceCollection services)
         {
@@ -44,7 +44,9 @@ namespace TomLonghurst.DependencyInjection
         public void Configure()
         {
             if (_types.Count == 0)
+            {
                 throw new InvalidOperationException($"No implementation defined for {_interfaceType.Name}");
+            }
 
             foreach (var type in _types)
             {
@@ -61,28 +63,25 @@ namespace TomLonghurst.DependencyInjection
             var parameter = Expression.Parameter(typeof(IServiceProvider), "x");
 
             // get constructor with highest number of parameters. Ideally, there should be only 1 constructor, but better be safe.
-            var ctor = currentType.GetConstructors().OrderByDescending(x => x.GetParameters().Count()).First();
+            var ctor = currentType.GetConstructors().OrderByDescending(x => x.GetParameters().Length).First();
 
             // for each parameter in the constructor
             var ctorParameters = ctor.GetParameters().Select(p =>
             {
                 // check if it implements the interface. That's how we find which parameter to inject the next handler.
-                if (_interfaceType.IsAssignableFrom(p.ParameterType))
+                if (!_interfaceType.IsAssignableFrom(p.ParameterType))
+                    return (Expression) Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService",
+                        new[] {p.ParameterType}, parameter);
+                if (nextType is null)
                 {
-                    if (nextType is null)
-                    {
-                        // if there's no next type, current type is the last in the chain, so it just receives null
-                        return Expression.Constant(null, _interfaceType);
-                    }
-                    else
-                    {
-                        // if there is, then we call IServiceProvider.GetRequiredService to resolve next type for us
-                        return Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", new Type[] { nextType }, parameter);
-                    }
+                    // if there's no next type, current type is the last in the chain, so it just receives null
+                    return Expression.Constant(null, _interfaceType);
                 }
-                
+
+                // if there is, then we call IServiceProvider.GetRequiredService to resolve next type for us
+                return Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", new[] { nextType }, parameter);
+
                 // this is a parameter we don't care about, so we just ask GetRequiredService to resolve it for us 
-                return (Expression)Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", new Type[] { p.ParameterType }, parameter);
             });
 
             // cool, we have all of our constructors parameters set, so we build a "new" expression to invoke it.

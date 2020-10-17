@@ -2,6 +2,7 @@ using System;
 using Castle.Core;
 using Castle.Windsor;
 using NUnit.Framework;
+using TomLonghurst.DependencyInjection.UnitTests.Shared;
 
 namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
 {
@@ -57,13 +58,13 @@ namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
         [Test]
         public void When_InterfaceIsNotFirstArgument_Then_ThrowException()
         {
-            Assert.Throws<ArgumentException>(() => _container.AddChained<BlockProcessor, ChallengeProcessor, AllowProcessor>(LifestyleType.Transient));
+            Assert.Throws<ArgumentException>(() => _container.AddChained(LifestyleType.Transient, typeof(BlockProcessor), typeof(ChallengeProcessor), typeof(AllowProcessor)));
         }
         
         [Test]
         public void When_ImplementationsThatImplementWrongInterface_Then_ThrowException()
         {
-            Assert.Throws<ArgumentException>(() => _container.AddChained<IWrongInterface, BlockProcessor, ChallengeProcessor, AllowProcessor>(LifestyleType.Transient));
+            Assert.Throws<ArgumentException>(() => _container.AddChained<IWrongInterface>(LifestyleType.Transient, typeof(BlockProcessor), typeof(ChallengeProcessor), typeof(AllowProcessor)));
         }
         
         [Test]

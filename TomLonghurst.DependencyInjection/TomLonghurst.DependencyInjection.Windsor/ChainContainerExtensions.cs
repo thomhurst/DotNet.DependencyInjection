@@ -68,31 +68,56 @@ namespace TomLonghurst.DependencyInjection.Windsor
         }
         
         public static IWindsorContainer AddChained<TService, TImplementation1, TImplementation2>(this IWindsorContainer container,
-            LifestyleType lifestyleType) where TService : class
+            LifestyleType lifestyleType) 
+            where TService : class 
+            where TImplementation1 : TService
+            where TImplementation2 : TService
         {
             return container.AddChained<TService>(lifestyleType, typeof(TImplementation1), typeof(TImplementation2));
         }
         
         public static IWindsorContainer AddChained<TService, TImplementation1, TImplementation2, TImplementation3>(this IWindsorContainer container,
-            LifestyleType lifestyleType) where TService : class
+            LifestyleType lifestyleType) 
+            where TService : class
+            where TImplementation1 : TService
+            where TImplementation2 : TService
+            where TImplementation3 : TService
         {
             return container.AddChained<TService>(lifestyleType, typeof(TImplementation1), typeof(TImplementation2), typeof(TImplementation3));
         }
         
         public static IWindsorContainer AddChained<TService, TImplementation1, TImplementation2, TImplementation3, TImplementation4>(this IWindsorContainer container,
-            LifestyleType lifestyleType) where TService : class
+            LifestyleType lifestyleType) 
+            where TService : class
+            where TImplementation1 : TService
+            where TImplementation2 : TService
+            where TImplementation3 : TService
+            where TImplementation4 : TService
         {
             return container.AddChained<TService>(lifestyleType, typeof(TImplementation1), typeof(TImplementation2), typeof(TImplementation3), typeof(TImplementation4));
         }
         
         public static IWindsorContainer AddChained<TService, TImplementation1, TImplementation2, TImplementation3, TImplementation4, TImplementation5>(this IWindsorContainer container,
-            LifestyleType lifestyleType) where TService : class
+            LifestyleType lifestyleType) 
+            where TService : class
+            where TImplementation1 : TService
+            where TImplementation2 : TService
+            where TImplementation3 : TService
+            where TImplementation4 : TService
+            where TImplementation5 : TService
         {
             return container.AddChained<TService>(lifestyleType, typeof(TImplementation1), typeof(TImplementation2), typeof(TImplementation3), typeof(TImplementation4), typeof(TImplementation5));
         }
         
         public static IWindsorContainer AddChained<TService, TImplementation1, TImplementation2, TImplementation3, TImplementation4, TImplementation5, TImplementation6>(this IWindsorContainer container,
-            LifestyleType lifestyleType) where TService : class
+            LifestyleType lifestyleType) 
+            where TService : class
+            where TImplementation1 : TService
+            where TImplementation2 : TService
+            where TImplementation3 : TService
+            where TImplementation4 : TService
+            where TImplementation5 : TService
+            where TImplementation6 : TService
         {
             return container.AddChained<TService>(lifestyleType, typeof(TImplementation1), typeof(TImplementation2), typeof(TImplementation3), typeof(TImplementation4), typeof(TImplementation5), typeof(TImplementation6));
         }

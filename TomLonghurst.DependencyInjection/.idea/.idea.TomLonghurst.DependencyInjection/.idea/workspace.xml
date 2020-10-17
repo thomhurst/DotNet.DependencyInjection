@@ -19,8 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21183a98-a693-40f8-96f1-a86d25d50f48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/IWrongInterface.cs" afterDir="false" />
+    <list default="true" id="21183a98-a693-40f8-96f1-a86d25d50f48" name="Default Changelist" comment="IWindsorContainer AddChained method">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TomLonghurst.DependencyInjection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TomLonghurst.DependencyInjection/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TomLonghurst.DependencyInjection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TomLonghurst.DependencyInjection/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests/TomLonghurst.DependencyInjection.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests/TomLonghurst.DependencyInjection.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests/Tests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/AllowProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/AllowProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/BlockProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/BlockProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/ChallengeProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/ChallengeProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/Decision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/Decision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/IProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/IProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/IWrongInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/IWrongInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/Tests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/Tests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/TomLonghurst.DependencyInjection.Windsor.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/TomLonghurst.DependencyInjection.Windsor.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor/ChainContainerExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor/ChainContainerExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.sln" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection/Class1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection/ChainConfigurator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TomLonghurst.DependencyInjection/TomLonghurst.DependencyInjection.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TomLonghurst.DependencyInjection/TomLonghurst.DependencyInjection.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +59,11 @@
         <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/AllowProcessor.cs" />
         <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/IWrongInterface.cs" />
         <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/Tests.cs" />
+        <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/Class1.cs" />
+        <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests.Shared/ChallengeProcessor.cs" />
+        <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection/Chain.cs" />
+        <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection/ChainConfigurator.cs" />
+        <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection.UnitTests/Tests.cs" />
         <option value="$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor/ChainContainerExtensions.cs" />
       </list>
     </option>
@@ -71,8 +91,16 @@
       <option name="presentableId" value="Default" />
       <updated>1602929008334</updated>
       <workItem from="1602929018430" duration="1096000" />
-      <workItem from="1602930317063" duration="354000" />
+      <workItem from="1602930317063" duration="1255000" />
     </task>
+    <task id="LOCAL-00001" summary="IWindsorContainer AddChained method">
+      <created>1602930684095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602930684095</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,19 +122,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="IWindsorContainer AddChained method" />
+    <option name="LAST_COMMIT_MESSAGE" value="IWindsorContainer AddChained method" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="873" y="432" key="Rider.ProjectTemplateDialog.Size" timestamp="1602929562503">
+    <state x="873" y="432" key="Rider.ProjectTemplateDialog.Size" timestamp="1602931046682">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="873" y="432" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1602929562503" />
+    <state x="873" y="432" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1602931046682" />
+    <state x="873" y="415" key="Vcs.Push.Dialog.v2" timestamp="1602930685532">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="873" y="415" key="Vcs.Push.Dialog.v2/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1602930685532" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TomLonghurst.DependencyInjection.Windsor.UnitTests/Tests.cs</url>
-          <line>49</line>
+          <line>50</line>
           <properties documentPath="D:\GitKraken\DotNet.AzureAD.TokenValidator\TomLonghurst.DependencyInjection\TomLonghurst.DependencyInjection.Windsor.UnitTests\Tests.cs" initialLine="48" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

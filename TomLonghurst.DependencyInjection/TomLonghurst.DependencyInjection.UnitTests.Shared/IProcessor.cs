@@ -1,4 +1,4 @@
-namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
+namespace TomLonghurst.DependencyInjection.UnitTests.Shared
 {
     public interface IProcessor
     {

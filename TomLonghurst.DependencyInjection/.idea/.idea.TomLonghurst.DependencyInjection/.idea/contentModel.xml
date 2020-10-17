@@ -16,7 +16,7 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="TomLonghurst.DependencyInjection" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="ChainConfigurator.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.0" t="Include">
@@ -36,8 +36,25 @@
             </e>
           </e>
         </e>
+        <e p="Tests.cs" t="Include" />
         <e p="TomLonghurst.DependencyInjection.UnitTests.csproj" t="IncludeRecursive" />
-        <e p="UnitTest1.cs" t="Include" />
+      </e>
+      <e p="TomLonghurst.DependencyInjection.UnitTests.Shared" t="IncludeRecursive">
+        <e p="AllowProcessor.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BlockProcessor.cs" t="Include" />
+        <e p="ChallengeProcessor.cs" t="Include" />
+        <e p="Decision.cs" t="Include" />
+        <e p="IProcessor.cs" t="Include" />
+        <e p="IWrongInterface.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="TomLonghurst.DependencyInjection.UnitTests.Shared.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TomLonghurst.DependencyInjection.UnitTests.Shared.csproj" t="IncludeRecursive" />
       </e>
       <e p="TomLonghurst.DependencyInjection.Windsor" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -52,13 +69,7 @@
         <e p="TomLonghurst.DependencyInjection.Windsor.csproj" t="IncludeRecursive" />
       </e>
       <e p="TomLonghurst.DependencyInjection.Windsor.UnitTests" t="IncludeRecursive">
-        <e p="AllowProcessor.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="BlockProcessor.cs" t="Include" />
-        <e p="ChallengeProcessor.cs" t="Include" />
-        <e p="Decision.cs" t="Include" />
-        <e p="IProcessor.cs" t="Include" />
-        <e p="IWrongInterface.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">

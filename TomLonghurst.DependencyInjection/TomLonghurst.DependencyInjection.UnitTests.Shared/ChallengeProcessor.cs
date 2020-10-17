@@ -1,11 +1,11 @@
-namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
+namespace TomLonghurst.DependencyInjection.UnitTests.Shared
 {
-    public class BlockProcessor : IProcessor
+    public class ChallengeProcessor : IProcessor
     {
         private readonly IProcessor _next;
         public static bool WasProcessed { get; private set; }
 
-        public BlockProcessor(IProcessor next)
+        public ChallengeProcessor(IProcessor next)
         {
             _next = next;
             WasProcessed = false;
@@ -14,7 +14,7 @@ namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
         public void Process(Decision decision)
         {
             WasProcessed = true;
-            if (decision != Decision.Block)
+            if (decision != Decision.Challenge)
             {
                 _next.Process(decision);
             }

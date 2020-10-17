@@ -13,6 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\TomLonghurst.DependencyInjection.UnitTests.Shared\TomLonghurst.DependencyInjection.UnitTests.Shared.csproj" />
       <ProjectReference Include="..\TomLonghurst.DependencyInjection.Windsor\TomLonghurst.DependencyInjection.Windsor.csproj" />
     </ItemGroup>
 

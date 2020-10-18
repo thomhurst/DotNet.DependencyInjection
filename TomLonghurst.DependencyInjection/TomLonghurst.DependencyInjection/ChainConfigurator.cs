@@ -70,8 +70,11 @@ namespace TomLonghurst.DependencyInjection
             {
                 // check if it implements the interface. That's how we find which parameter to inject the next handler.
                 if (!_interfaceType.IsAssignableFrom(p.ParameterType))
+                {
                     return (Expression) Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService",
                         new[] {p.ParameterType}, parameter);
+                }
+
                 if (nextType is null)
                 {
                     // if there's no next type, current type is the last in the chain, so it just receives null

@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21183a98-a693-40f8-96f1-a86d25d50f48" name="Default Changelist" comment="Some styling tweaks">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TomLonghurst.DependencyInjection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TomLonghurst.DependencyInjection/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="21183a98-a693-40f8-96f1-a86d25d50f48" name="Default Changelist" comment="Added missing braces around if statement" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +76,7 @@
       <workItem from="1602929018430" duration="1096000" />
       <workItem from="1602930317063" duration="1665000" />
       <workItem from="1603014961475" duration="49000" />
+      <workItem from="1603015053201" duration="62000" />
     </task>
     <task id="LOCAL-00001" summary="IWindsorContainer AddChained method">
       <created>1602930684095</created>
@@ -100,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602931921745</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added missing braces around if statement">
+      <created>1603015094904</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603015094904</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,17 +131,18 @@
     <MESSAGE value="IWindsorContainer AddChained method" />
     <MESSAGE value="Some compiler checks" />
     <MESSAGE value="Some styling tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some styling tweaks" />
+    <MESSAGE value="Added missing braces around if statement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added missing braces around if statement" />
   </component>
   <component name="WindowStateProjectService">
     <state x="873" y="432" key="Rider.ProjectTemplateDialog.Size" timestamp="1602931046682">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="432" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1602931046682" />
-    <state x="873" y="415" key="Vcs.Push.Dialog.v2" timestamp="1602931922615">
+    <state x="873" y="415" key="Vcs.Push.Dialog.v2" timestamp="1603015096093">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="873" y="415" key="Vcs.Push.Dialog.v2/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1602931922615" />
+    <state x="873" y="415" key="Vcs.Push.Dialog.v2/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1603015096093" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

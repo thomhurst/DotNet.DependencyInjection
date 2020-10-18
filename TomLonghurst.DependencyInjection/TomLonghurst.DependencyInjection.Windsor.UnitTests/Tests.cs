@@ -22,11 +22,13 @@ namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
         {
             _container.AddChained<IProcessor, BlockProcessor, ChallengeProcessor, AllowProcessor>(LifestyleType.Transient);
             var processor = _container.Resolve<IProcessor>();
-            processor.Process(Decision.Block);
+            var processedByType = processor.Process(Decision.Block);
             
             Assert.That(BlockProcessor.WasProcessed, Is.True);
             Assert.That(ChallengeProcessor.WasProcessed, Is.False);
             Assert.That(AllowProcessor.WasProcessed, Is.False);
+            
+            Assert.That(processedByType, Is.EqualTo(typeof(BlockProcessor)));
         }
         
         [Repeat(3)]
@@ -35,11 +37,13 @@ namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
         {
             _container.AddChained<IProcessor, BlockProcessor, ChallengeProcessor, AllowProcessor>(LifestyleType.Transient);
             var processor = _container.Resolve<IProcessor>();
-            processor.Process(Decision.Challenge);
+            var processedByType = processor.Process(Decision.Challenge);
             
             Assert.That(BlockProcessor.WasProcessed, Is.True);
             Assert.That(ChallengeProcessor.WasProcessed, Is.True);
             Assert.That(AllowProcessor.WasProcessed, Is.False);
+            
+            Assert.That(processedByType, Is.EqualTo(typeof(ChallengeProcessor)));
         }
         
         [Repeat(3)]
@@ -48,11 +52,13 @@ namespace TomLonghurst.DependencyInjection.Windsor.UnitTests
         {
             _container.AddChained<IProcessor, BlockProcessor, ChallengeProcessor, AllowProcessor>(LifestyleType.Transient);
             var processor = _container.Resolve<IProcessor>();
-            processor.Process(Decision.Allow);
+            var processedByType = processor.Process(Decision.Allow);
             
             Assert.That(BlockProcessor.WasProcessed, Is.True);
             Assert.That(ChallengeProcessor.WasProcessed, Is.True);
             Assert.That(AllowProcessor.WasProcessed, Is.True);
+            
+            Assert.That(processedByType, Is.EqualTo(typeof(AllowProcessor)));
         }
         
         [Test]

@@ -1,3 +1,5 @@
+using System;
+
 namespace TomLonghurst.DependencyInjection.UnitTests.Shared
 {
     public class BlockProcessor : IProcessor
@@ -11,13 +13,15 @@ namespace TomLonghurst.DependencyInjection.UnitTests.Shared
             WasProcessed = false;
         }
         
-        public void Process(Decision decision)
+        public Type Process(Decision decision)
         {
             WasProcessed = true;
             if (decision != Decision.Block)
             {
-                _next.Process(decision);
+                return _next.Process(decision);
             }
+            
+            return GetType();
         }
     }
 }
